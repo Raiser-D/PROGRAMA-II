@@ -10,7 +10,7 @@ class Pessoa(db.Entity):
     telefone = Optional(str)
     cpf = Required(str)
     rg = Required(str)
-    dt_nasc = Required(date, default=date(2000, 1, 1))  # Default date if not provided
+    dt_nasc = Required(date, default=date(2000, 1, 1))
     cep = Required(str)
     rua = Optional(str)
     bairro = Optional(str)
