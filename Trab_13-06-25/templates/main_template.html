@@ -1,0 +1,41 @@
+<!doctype html>
+
+<head>
+    <title>{% block title %}{% endblock %} - Sistema CadPes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mycss.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        a{
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        a:hover {
+            color: black;
+            transition: color 0.5s;
+        }
+        body
+        {
+            font-family: Arial, sans-serif;
+            background-color: #c9743c;
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Academia DosGurizes</h1>
+    <a href="{{ url_for("home") }}">Página inicial</a> | 
+    <a href="{{ url_for("about") }}">Sobre o sistema</a> | 
+    <a href="{{ url_for("listar_pessoas") }}">Listagem</a> |
+    <a href="{{ url_for("cadastrar_pessoa") }}">Cadastrar Pessoa</a>
+    <hr />
+
+    <section class="content">
+        <header> {% block header %}{% endblock %} </header>
+
+        {% block content %}{% endblock %}
+    </section>
+
+</body>
