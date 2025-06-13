@@ -1,0 +1,84 @@
+<head>
+    <style>
+        a{
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        a:hover {
+            color: black;
+            transition: color 0.5s;
+        }
+        body
+        {
+            font-family: Arial, sans-serif;
+            background-color: #c9743c;
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            max-width: 80%;
+            background-color: #fff;
+        }
+        td, th {
+            padding: 5px; /* Adjust the value as needed */
+        }
+        th{
+            text-align: left;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+{% extends 'main_template.html' %}
+
+{% block header %}
+  <h1>{% block title %}Listagem de pessoas que treinam{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+
+<p>
+    <a href="{{ url_for("form_adicionar_pessoa") }}">Cadastrar nova pessoa</a>
+</p>
+
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Cpf</th>
+        <th>Registro Geral</th>
+        <th>Data de Nascimento</th>
+        <th>CEP</th>
+        <th>Rua</th>
+        <th>Bairro</th>
+        <th>Número da Casa</th>
+        <th>Peso</th>
+    </tr>
+
+    {% for p in pessoas %}
+           <tr>
+            <td>{{ p.nome }}</td>
+            <td>{{ p.email }}</td>
+            <td>{{ p.telefone }}</td>
+            <td>{{ p.cpf }}</td>
+            <td>{{ p.rg }}</td>
+            <td>{{ p.dt_nasc }}</td>
+            <td>{{ p.cep }}</td>
+            <td>{{ p.rua }}</td>
+            <td>{{ p.bairro }}</td>
+            <td>{{ p.num_casa }}</td>
+            <td>{{ p.peso }}</td>
+        </tr>
+
+    {% endfor %}
+   
+</table>
+
+{% endblock %}
