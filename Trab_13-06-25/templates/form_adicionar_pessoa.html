@@ -1,0 +1,134 @@
+<head>
+    <style>
+        a{
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        a:hover {
+            color: black;
+            transition: color 0.5s;
+        }
+        body
+        {
+            font-family: Arial, sans-serif;
+            background-color: #c9743c;
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            text-align: center;
+        }
+        form {
+            display: table;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        form p {
+            display: table-row;
+        }
+
+        form p > span {
+            display: table-cell;
+            width: 130px; /* espaço reservado ao texto */
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        input[type="date"]{
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin: 10px 0 0 0;
+        }
+        form p > input {
+            display: table-cell;
+            margin: 8px 0 0 0;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+
+        /* Botão */
+        button[type="submit"] {
+            margin-top: 18px;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 6px;
+            background-color: #c9743c;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #a55d2a;
+        }
+        
+
+    </style>
+</head>
+
+{% extends 'main_template.html' %}
+
+{% block header %}
+<h1>{% block title %}Cadastrar pessoa{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<form action="/cadastrar_pessoa" method="post">
+    <p>
+        <span>Nome:</span>
+        <input type="text" name="nome" required>
+    </p>
+    <p>
+        <span>Email:</span>
+        <input type="email" name="email" required>
+    </p>
+    <p>
+        <span>Telefone:</span>
+        <input type="tel" name="telefone">
+    </p>
+    <p>
+        <span>CPF:</span>
+        <input type="text" name="cpf" required>
+    </p>
+    <p>
+        <span>RG:</span>
+        <input type="text" name="registro_geral" required>
+    </p>
+    <p>
+        <span>Data de Nascimento:</span>
+        <input type="date" name="dt_nasc" required>
+    </p>
+    <p>
+        <span>CEP:</span>
+        <input type="text" name="cep" required>
+    </p>
+    <p>
+        <span>Rua:</span>
+        <input type="text" name="rua">
+    </p>
+    <p>
+        <span>Bairro:</span>
+        <input type="text" name="bairro">
+    </p>
+    <p>
+        <span>Número da casa:</span>
+        <input type="number" name="num_casa" min="0" required>
+    </p>
+    <p>
+        <span>Peso:</span>
+        <input type="number" name="peso" step="0.1">
+    </p>
+
+       <p>
+        <button type="submit" style="display:block;">Cadastrar</button>
+    </p>
+</form>
+
+
+{% endblock %}
