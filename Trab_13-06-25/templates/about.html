@@ -1,0 +1,32 @@
+<head>
+    <style>
+      a{
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        a:hover {
+            color: black;
+            transition: color 0.5s;
+        }
+        body
+        {
+            font-family: Arial, sans-serif;
+            background-color: #c9743c;
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            text-align: center;
+        }
+    </style>
+</head>
+
+{% extends 'main_template.html' %}
+
+{% block header %}
+  <h1>{% block title %}Sobre{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  Sistema de cadastro de pessoas na academia DosGurizes
+{% endblock %}
+
